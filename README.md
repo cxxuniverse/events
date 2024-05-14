@@ -31,11 +31,11 @@ struct Test
     }
 };
 
-void some_function(cxc::EventListener<Events> &event_listener) { /* Event trigger */ }
-
-void some_other_function(cxc::EventListener<Events> &event_listener) { 
+void some_function(cxc::EventListener<Events> &event_listener) { 
     event_listener.trigger(Events::DECREASE_COUNT);
 }
+
+void some_other_function(cxc::EventListener<Events> &event_listener) { /* Event trigger */ }
 
 int main()
 {
@@ -44,6 +44,8 @@ int main()
     std::cout << test.get_size() << std::endl;
     some_function(test.event_listener);
     std::cout << test.get_size() << std::endl;
+
+    ....
 }
 
 ```
